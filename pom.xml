@@ -82,7 +82,7 @@
     <properties>
         <!-- Dependency Versions -->
         <frontend.version>4.2.0</frontend.version>
-        <lib.alpine.version>${project.parent.version}</lib.alpine.version>
+        <lib.alpine.version>1.10.4</lib.alpine.version>
         <lib.cpe-parser.version>2.0.2</lib.cpe-parser.version>
         <lib.cvss-calculator.version>1.4.0</lib.cvss-calculator.version>
         <lib.cyclonedx-java.version>5.0.1</lib.cyclonedx-java.version>
@@ -244,7 +244,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
-            <version>1.20</version>
+            <version>1.26.0</version>
         </dependency>
         <!-- Test Dependencies -->
         <dependency>
@@ -411,9 +411,7 @@
                                 <phase>prepare-package</phase>
                                 <configuration>
                                     <target>
-                                        <get src="https://github.com/DependencyTrack/frontend/releases/download/${frontend.version}/frontend-dist.zip"
-                                             dest="${project.build.directory}"
-                                             verbose="true"/>
+                                        <get src="https://github.com/DependencyTrack/frontend/releases/download/${frontend.version}/frontend-dist.zip" dest="${project.build.directory}" verbose="true"/>
                                     </target>
                                 </configuration>
                                 <goals>
@@ -425,8 +423,7 @@
                                 <phase>prepare-package</phase>
                                 <configuration>
                                     <target>
-                                        <unzip src="${project.build.directory}/frontend-dist.zip"
-                                               dest="${project.build.directory}/frontend">
+                                        <unzip src="${project.build.directory}/frontend-dist.zip" dest="${project.build.directory}/frontend">
                                         </unzip>
                                     </target>
                                 </configuration>
